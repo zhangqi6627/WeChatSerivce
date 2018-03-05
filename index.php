@@ -98,6 +98,13 @@ class wechatCallbackapiTest
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                     echo $resultStr;
                 }
+                elseif($keyword == "谁" || $keyword == "你是谁")
+                {
+                    $msgType = "text";
+                    $contentStr = "我是你爹";
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                    echo $resultStr;
+                }
                 elseif($keyword == "图片")
                 {
                     $msgType = "image";
