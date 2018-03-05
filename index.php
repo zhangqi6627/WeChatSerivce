@@ -105,6 +105,15 @@ class wechatCallbackapiTest
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                     echo $resultStr;
                 }
+                elseif($keyword == "网络" || $keyword == "天气")
+                {
+                    $msgType = "text";
+                    $contentStr = "我是你爹";
+                    $url = 'http://www.baidu.com/';
+                    $html = file_get_contents($url);
+                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $html);
+                    echo $resultStr;
+                }
                 elseif($keyword == "图片")
                 {
                     $msgType = "image";
